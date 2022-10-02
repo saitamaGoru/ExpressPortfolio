@@ -1,0 +1,47 @@
+<!--Main Nav-->
+
+<nav class="navbar navbar-expand-lg bg-secondary"style="--bs-bg-opacity: .3;">
+<div class="container-fluid mr-auto">
+  <ul class="navbar-nav mr-auto">
+   
+    <li class="nav-item">
+  
+      <img src="\Assets\images\pexels-ismaeel-zakariya-4243357 (1).jpg"width="90px"height="90px"class="rounded mx-auto d-block" >
+    </li>
+    <li class="nav-item">
+      <a class="navbar-brand clr" href="/home"alt="Express Portfolio"><h1 style="text-indent: 10%;margin-top: 45px;">PORTFOLIO</h1></a>
+   </li></ul>
+
+</div>
+ 
+</nav>
+
+<nav class="navbar navbar-expand-lg bg-secondary"style="--bs-bg-opacity: .3;margin-top:auto">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav auto">
+          <li class="nav-item">
+
+            <a class="nav-link <%= (title == 'Home' ? ' active' : '') %> mainheading fnt clr" aria-current="page" href="/home"><i class=" fas fa-light fa-house"></i> Home page</a>
+
+         </li>
+          <li class="nav-item">
+            <a class="nav-link <%= (title == 'About Me' ? ' active' : '') %> mainheading fnt clr" href="/about"><i class="fas fa-solid fa-address-card"></i> About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= (title == 'Projects page' ? ' active' : '') %> mainheading fnt clr" href="/projects"><i class="fas fa-sharp fa-solid fa-camera-retro"></i> Projects page</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= (title == 'Contact Me' ? ' active' : '') %> mainheading fnt clr" href="/contact"><i class="fas fa-sharp fa-solid fa-phone"></i> Contact Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= (title == 'Services page' ? ' active' : '') %> mainheading fnt clr" href="/services"><i class="fas fa-sharp fa-solid fa-gear"></i> Services page</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
