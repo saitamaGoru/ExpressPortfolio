@@ -1,0 +1,55 @@
+<%- include ('../partials/header.ejs')  %>
+
+<%- include ('../partials/main_nav.ejs')  %>
+
+<!---<div class="container-fluid bgclr apprnceBg"style="padding-bottom:2%">-->
+    <div class="container-fluid text-center  mt-1"></div>
+    <div class="row">
+        <div class="col">
+
+            <div class="row hdBg">
+
+                <h1 class="mainheading "style="text-align:center; margin-top:9px "><b>Contacts</b></h1>
+        
+            </div>
+            <a href="/business-contact-list/add" class="btn btn-primary"  role="button">
+                <i class="fas fa-plus-circle">Add a contact</i></a>
+           <br>
+           <table class="table table-bordered table-striped table-hover">
+            <!--Header row-->
+            <tr>
+                <th class="text-center col-sm-auto">Name</th>
+                <th class="text-center col-sm-auto">Phone Number</th>
+                <th class="text-center col-sm-auto">Email address</th>
+                <th class = "text-center col-sm-auto"></th>
+                <th class = "text-center col-sm-auto"></th>
+            </tr>
+                <% for( let count = 0; count < contactList.length; count++ ) { %>
+                    <tr>
+                        <td class="text-center col-md-auto"><%= contactList[count].name %>  </td>
+                        <td class="text-center col-md-auto"><%= contactList[count].number %></td>
+                        <td class="text-center col-md-auto"><%= contactList[count].email %></td>
+                        <td class ="text-center col-md-auto">
+                            <a href="/business-contact-list/edit/<%= contactList[count]._id %>" class="btn btn-primary btn-sm ">
+                                <i class="fas fa-pencil alt"></i>Edit
+                                
+                            </a>
+                            </td>
+                            <td class ="text-center col-md-auto">
+                                <a href="/business-contact-list/delete/<%= contactList[count]._id %>" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash alt"></i>Delete
+                                    
+                                </a>
+                                </td>
+                    </tr>
+                
+                <% } %>
+           </table>
+        </div>
+    </div>
+    </div>
+<!--</div>-->
+
+<%- include ('../partials/bottom_nav.ejs')  %>
+   
+<%- include ('../partials/footer.ejs')  %>

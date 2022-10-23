@@ -1,5 +1,6 @@
 
-<%- include partials/header.ejs  %>
+<%- include ('partials/header.ejs')  %>
+
 
 
 
@@ -17,7 +18,10 @@
 
             <div class="col-lg-auto"style="margin:auto"><h2 >Welcome<h2>
                 <br>
-                <p class="lead"style="font-size:40px;">
+                <% if (title == "contact") { %>
+                    <a href="/business-contact-list" class="btn btn1"role="button"style="color:white">Business Contacts</a>
+                   <% } %>
+                <p class="font-">
                   <strong> This website you can find all my information, my email, full name, projects that I have done so far.<br>My mission is to keep updating the website with new features
                    as I learn more about programming skills.<br> This website is going to be my root source of all resumes and my personal portfolio.<br>
                 </strong>
@@ -45,6 +49,6 @@
 
 </main>
 
-<%- include partials/bottom_nav.ejs  %>
+<%- include ('partials/bottom_nav.ejs')  %>
    
-<%- include partials/footer.ejs  %>
+<%- include ('partials/footer.ejs')  %>
