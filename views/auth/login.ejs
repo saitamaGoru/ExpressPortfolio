@@ -2,7 +2,7 @@
 
 <%- include ('../partials/main_nav.ejs')  %>
 
-<main class="container">
+<main class="container-fluid ">
     <!-- Message Area -->
     <% if(messages.length > 0) {%>
         <div class="alert alert-danger">
@@ -10,9 +10,14 @@
         </div>
     <% } %>
 
-    <div class="row">
+    <div class="row mt-1">
         <div class="offset-md-4 col-md-4">
-            <h1>Please Login</h1>
+            <div class="row  mt-1">
+
+                <h2 class="mainheading"><strong>Please Login</strong></h2>
+        
+            </div>
+        
             <form method="POST" autocomplete="off">
                 <fieldset class="form-group">
                     <label for="username">Username: </label>
