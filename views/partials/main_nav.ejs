@@ -43,7 +43,17 @@
           <li class="nav-item">
             <a class="nav-link <%= (title == 'Business Contact List' ? ' active' : '') %> mainheading fnt clr" href="/business-contact-list"><i class="fas fa-sharp fa-solid fa-phone"></i>Business Contacts</a>
           </li>
-         
+          <% if (typeof displayName == 'string' && displayName) { %>
+            <li class="navbar-text mainheading fnt clr"><i class="fas fa-lg fa-user"></i>  Welcome, <%= displayName %></li>
+            <li class="nav-item"><a href="/logout" class="nav-link mainheading fnt clr">
+              <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+           
+          <% } else { %>
+            <li class="nav-item"><a href="/login" class="nav-link mainheading fnt clr">
+              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+          <% } %>
+  
+  
         </ul>
       </div>
     </div>

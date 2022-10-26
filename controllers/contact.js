@@ -13,7 +13,8 @@ module.exports.displayContactList = (req, res, next) => {
           
             res.render('contact/index', {
                 title: 'Contacts',
-                contactList: contactList
+                contactList: contactList,
+                displayName:req.user ? req.user.displayName : ''
             });
         }
     });
@@ -58,7 +59,8 @@ module.exports.displayEditPage = (req,res,next)=>{
             res.end(err);
         }
         else{
-            res.render('contact/edit', {title:'Edit Contact', contact:contactToEdit})
+            res.render('contact/edit', {title:'Edit Contact', contact:contactToEdit,
+            displayName:req.user ? req.user.displayName : ''})
         }
     });
 

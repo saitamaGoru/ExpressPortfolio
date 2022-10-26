@@ -8,7 +8,7 @@ let logger = require('morgan');
 let session = require('express-session');
 let passport = require('passport');
 let passportlocal = require('passport-local');
-let localStrategy = passportlocal.Strategy;
+let local = passportlocal.Strategy;
 let flash = require('connect-flash');
 //databse setup 
 let mongoose = require('mongoose');
@@ -51,8 +51,9 @@ app.use(passport.session());
 
 //passport user config
 let userModel = require("../models/user");
-let user = userModel.userModel;
+let user = userModel.User;
 
+passport.use(user.createStrategy());
 passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 
