@@ -3,6 +3,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 let passport = require('passport');
+let jwt = require('jsonwebtoken');
 
 function requireAuth(req,res,next)
 {

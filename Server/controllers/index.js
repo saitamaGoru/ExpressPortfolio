@@ -3,6 +3,8 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
+let jwt = require('jsonwebtoken');
+let db = require('../config/db');
 
 
 // create the User Model instance
@@ -71,8 +73,24 @@ module.exports.processLoginPage = (req, res, next) => {
                 return next(err);
             }
 
-         
+         const payload =
+         {
+            id:user._id,
+            displayname:user.displayName,
+            username: user.username,
+            email: user.email
+         }
+            const authToken = jwt.sign(payload,db.Secret,{
+                expiresIn:604800
+            });
 
+            /*res.json({seccess: true, msg: 'User logged in successfully!', user: {
+                id:user._id,
+                displayname:user.displayName,
+                username: user.username,
+                email: user.email
+               
+            }, token: authToken});*/
             return res.redirect('/business-contact-list');
         });
     })(req, res, next);
@@ -126,7 +144,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         else
         {
           
-
+            res.json({success: true, msg:'User Registered Successfully'});
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/business-contact-list')
             });

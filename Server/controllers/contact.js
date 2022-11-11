@@ -3,6 +3,7 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 let Contact = require('../models/contact.js');
+let jwt = require('jsonwebtoken');
 
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
